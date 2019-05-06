@@ -67,7 +67,7 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     background-color: white; 
-    opacity: 0.8;
+    opacity: 0.9;
 
     
 }
@@ -112,11 +112,33 @@
 }
 
 
-.login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
+
+
+
+// ---------------------------- End Login ------------------------------
+// ----------------------------- SignUp --------------------------------
+
+#signUpWrapper{
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
 }
 
+#signUpImage{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/6517/parking-multi-storey-car-park.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');  
+}
 
-// ---------------------------- End Login -----------------------------
+#signUpCard{
+    opacity: 0.9;
+}
+
+// ---------------------------End Signup -------------------------------

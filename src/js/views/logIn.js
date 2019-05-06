@@ -8,9 +8,11 @@ export class LogIn extends React.Component {
 		return (
 			<div id="logInWrapper">
 				<div className="container login-container">
-					<div className="row">
+					<div className="row px-1">
 						<div className="col-md-4 rounded p-3 login-form-1">
-							<h3>Login</h3>
+							<header className="card-header">
+								<h4 className="card-title mt-2">Login</h4>
+							</header>
 							<form>
 								<div className="form-group">
 									<input type="text" className="form-control" placeholder="Email" value="" />
@@ -18,17 +20,21 @@ export class LogIn extends React.Component {
 								<div className="form-group">
 									<input type="password" className="form-control" placeholder="Password" value="" />
 								</div>
-								<div className="form-group">
+								<div className="form-group text-center">
 									<Link to="/">
-										<button type="button" className="btn btn-outline-primary mx-1">
+										<button type="button" className="btn btn-outline-primary btn-lg mx-1">
 											Sign In
 										</button>
 									</Link>
 									<Link to="/">
-										<button type="button" className="btn btn-outline-danger mx-1">
+										<button type="button" className="btn btn-outline-danger btn-lg mx-1">
 											Cancel
 										</button>
 									</Link>
+								</div>
+								<div className="form-group">
+									Not a member? &nbsp;
+									<Link to="/signup">Sign Up!</Link>
 								</div>
 							</form>
 						</div>
