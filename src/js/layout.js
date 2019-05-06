@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
@@ -22,16 +23,22 @@ export class Layout extends React.Component {
 		return (
 			<div className="d-flex flex-column h-100">
 				<BrowserRouter basename={basename}>
-					<ScrollToTop>
-						<Switch>
-							<Route exact path="/" component={Home} />
-							<Route path="/login" component={LogIn} />
-							<Route path="/signup" component={SignUp} />
-							<Route path="/demo" component={Demo} />
-							<Route path="/single/:theid" component={Single} />
-							<Route render={() => <h1>Not found!</h1>} />
-						</Switch>
-					</ScrollToTop>
+					<Route
+						render={location => (
+							<TransitionGroup>
+								<CSSTransition key={window.location} timeout={1000} classNames="fade">
+									<Switch>
+										<Route exact path="/" component={Home} />
+										<Route path="/login" component={LogIn} />
+										<Route path="/signup" component={SignUp} />
+										<Route path="/demo" component={Demo} />
+										<Route path="/single/:theid" component={Single} />
+										<Route render={() => <h1>Not found!</h1>} />
+									</Switch>
+								</CSSTransition>
+							</TransitionGroup>
+						)}
+					/>
 				</BrowserRouter>
 			</div>
 		);
