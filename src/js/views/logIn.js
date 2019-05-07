@@ -14,7 +14,7 @@ export class LogIn extends React.Component {
 								<h4 className="card-title mt-2">Login</h4>
 							</header>
 							<form>
-								<div className="form-group">
+								<div className="form-group mt-3">
 									<input type="text" className="form-control" placeholder="Email" value="" />
 								</div>
 								<div className="form-group">
