@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Navbar } from "../component/navbar";
 import { Footer } from "../component/footer";
@@ -22,9 +23,11 @@ export class Home extends React.Component {
 							/>
 
 							<div className="col-md-1 ml-1 mr-1 p-0">
-								<button type="button p-0" className="btn btn-outline-light mt-1 mb-1">
-									Lets Go!
-								</button>
+								<Link to="/map">
+									<button type="button p-0" className="btn btn-outline-light mt-1 mb-1">
+										Lets Go!
+									</button>
+								</Link>
 							</div>
 						</div>
 					</div>

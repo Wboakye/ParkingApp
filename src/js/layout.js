@@ -8,6 +8,7 @@ import { Demo } from "./views/demo";
 import { LogIn } from "./views/logIn";
 import { SignUp } from "./views/signUp";
 import { Single } from "./views/single";
+import { UserMap } from "./views/userMap";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -32,6 +33,7 @@ export class Layout extends React.Component {
 										<Route path="/login" component={LogIn} />
 										<Route path="/signup" component={SignUp} />
 										<Route path="/demo" component={Demo} />
+										<Route path="/map" component={UserMap} />
 										<Route path="/single/:theid" component={Single} />
 										<Route render={() => <h1>Not found!</h1>} />
 									</Switch>
