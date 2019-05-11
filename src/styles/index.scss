@@ -1,3 +1,32 @@
+// ------------------------- Page Trans ------------------------
+
+.page{
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.fade-enter{
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit{
+  opacity: 1;
+}
+
+fade-exit.fade-exit-active{
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+
+// ----------------------------End Page Trans-----------------------
 // ---------------------------- Home --------------------------------
 
 #homeWrapper{
@@ -142,30 +171,28 @@
 }
 
 // ---------------------------End Signup -------------------------------
+// ----------------------------- Map -----------------------------------
 
-
-
-.page{
-  position: absolute;
-  left: 0;
-  right: 0;
+#mapWrapper{
+    position: relative;
 }
 
-.fade-enter{
-  opacity: 0;
-  z-index: 1;
+#map{
+    z-index: 1;
+    position: relative;
 }
 
-.fade-enter.fade-enter-active{
-  opacity: 1;
-  transition: opacity 300ms linear 150ms;
+#mapInfoWindow{
+    z-index: 10;
+    background-color: black;
+    position: absolute;
+    right: 0px;
 }
 
-.fade-exit{
-  opacity: 1;
-}
 
-fade-exit.fade-exit-active{
-  opacity: 0;
-  transition: opacity 150ms linear;
-}
+
+
+
+
+
+// --------------------------- End Map ---------------------------------- 
