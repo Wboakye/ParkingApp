@@ -45,7 +45,7 @@ fade-exit.fade-exit-active{
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 
 }
 
@@ -172,6 +172,11 @@ fade-exit.fade-exit-active{
 
 // ---------------------------End Signup -------------------------------
 // ----------------------------- Map -----------------------------------
+
+#mapNav{
+    width: 30vw;
+}
+
 
 #mapWrapper{
     position: relative;
