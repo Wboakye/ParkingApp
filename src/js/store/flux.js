@@ -29,8 +29,8 @@ const getState = ({ getStore, setStore }) => {
 
 			handleSignUp: (firstName, lastName, email, city, pass1, pass2, e) => {
 				const store = getStore();
-				//ensure pass and pass verification match
 				e.preventDefault();
+				//ensure pass and pass verification match
 				if (pass1 !== pass2) {
 					alert("Passwords do not match.");
 				} else {
@@ -41,7 +41,7 @@ const getState = ({ getStore, setStore }) => {
 						password: pass1
 					};
 					// push info to database
-					fetch("https://assets.breatheco.de/apis/fake/contact/", {
+					fetch("API URL", {
 						method: "POST",
 						body: JSON.stringify(signUpInfo),
 						headers: {
@@ -56,11 +56,9 @@ const getState = ({ getStore, setStore }) => {
 									store.contacts = data;
 									setStore({ store: store });
 								})
-								.then(response => console.log("Success:", JSON.stringify(response)))
 
 								.catch(function(err) {})
-						)
-						.catch(error => console.error("Error:", error));
+						);
 				}
 			}
 		}
