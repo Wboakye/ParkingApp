@@ -12,7 +12,9 @@ export class UserMap extends React.Component {
 		return (
 			<div style={{ height: "100vh", width: "100vw" }}>
 				<WrappedMap
-					googleMapURL={"https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7X8agpeC7_q-NEqrXReWCgiZIkHPTrA"}
+					googleMapURL={
+						"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBF7X8agpeC7_q-NEqrXReWCgiZIkHPTrA"
+					}
 					loadingElement={<div style={{ height: "500px" }} />}
 					containerElement={<div style={{ height: "100%" }} />}
 					mapElement={<div style={{ height: "100%" }} />}
@@ -21,3 +23,5 @@ export class UserMap extends React.Component {
 		);
 	}
 }
+
+//https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7X8agpeC7_q-NEqrXReWCgiZIkHPTrA
