@@ -22,7 +22,7 @@ export class UserMap extends React.Component {
 						mapElement={<div style={{ height: "100%" }} />}
 					/>
 				</div>
-				<div className="col-12 col-sm-3 ml-auto h-100 shadow-lg" id="mapInfoWindow">
+				<div className="col-12 col-sm-3 ml-auto shadow-lg" id="mapInfoWindow">
 					<Link to="/">
 						<button type="button" className="btn btn-outline-light">
 							Home
