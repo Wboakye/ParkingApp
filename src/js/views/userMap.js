@@ -40,7 +40,3 @@ export class UserMap extends React.Component {
 		);
 	}
 }
-
-// https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBF7X8agpeC7_q-NEqrXReWCgiZIkHPTrA
-// https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7X8agpeC7_q-NEqrXReWCgiZIkHPTrA
-// https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places
