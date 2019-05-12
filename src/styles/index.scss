@@ -174,7 +174,7 @@ fade-exit.fade-exit-active{
 // ----------------------------- Map -----------------------------------
 
 #mapNav{
-    width: 30vw;
+    width: 75vw;
 }
 
 
@@ -195,10 +195,21 @@ fade-exit.fade-exit-active{
     height: 100vh;
 }
 
+#searchRowMap{
+    position: absolute;
+}
+
 @media screen and (max-width: 576px){
     #mapInfoWindow{
         height: 35vh;
         bottom: 0px;
+    }
+    #mapNav{
+    width: 100vw;
+}
+
+    #mapNav h1{
+        font-size: 100%;
     }
 
 }
