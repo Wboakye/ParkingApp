@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 
+{
+	/* Map Rendering Function */
+}
 function Map() {
 	return <GoogleMap defaultZoom={15} defaultCenter={{ lat: 25.77643, lng: -80.191742 }} />;
 }
@@ -12,6 +15,7 @@ export class UserMap extends React.Component {
 	render() {
 		return (
 			<div>
+				{/*Search Bar*/}
 				<nav className="navbar navbar-light bg-transparent fixed-top pt-4 mr-1" id="mapNav">
 					<div className="row m-auto justify-content-center pt-3" id="searchRowMap">
 						<input
@@ -31,6 +35,8 @@ export class UserMap extends React.Component {
 						</div>
 					</div>
 				</nav>
+
+				{/* Map API key removed until demo */}
 				<div className="row m-0 h-100" id="mapWrapper">
 					<div className="col-sm-12 p-0" id="map" style={{ height: "100vh", width: "100vw" }}>
 						<WrappedMap
@@ -42,6 +48,7 @@ export class UserMap extends React.Component {
 							mapElement={<div style={{ height: "100%" }} />}
 						/>
 					</div>
+					{/* Moving info bar */}
 					<div className="col-12 col-sm-3 ml-auto shadow-lg rounded-top" id="mapInfoWindow">
 						<div className="row">
 							<div className="col-4" />

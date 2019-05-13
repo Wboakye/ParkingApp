@@ -12,8 +12,10 @@ export class Home extends React.Component {
 			<div>
 				<Navbar />
 				<div className="text-center" id="homeWrapper">
+					{/*Home background image, may input variable for constantly changeing images*/}
 					<div id="homeImage">
 						<div className="row m-auto justify-content-center" id="searchRow">
+							{/*Search bar. Must turn user input into API call*/}
 							<input
 								className="col-md-6 form-control rounded border border-white mt-1 mb-1"
 								type="search"
@@ -21,7 +23,6 @@ export class Home extends React.Component {
 								aria-label="Search"
 								id="searchWrapper"
 							/>
-
 							<div className="col-md-1 ml-1 mr-1 p-0">
 								<Link to="/map">
 									<button type="button p-0" className="btn btn-outline-light mt-1 mb-1">
