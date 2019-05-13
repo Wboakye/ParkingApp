@@ -12,17 +12,12 @@ export class UserMap extends React.Component {
 	render() {
 		return (
 			<div>
-				<nav className="navbar navbar-light bg-transparent fixed-top pt-4" id="mapNav">
-					<div className="row" id="searchRowMap">
-						<div className="col-1">
-							<span className="navbar-brand mb-0 h1">
-								<h1>Park.it</h1>
-							</span>
-						</div>
+				<nav className="navbar navbar-light bg-transparent fixed-top pt-4 mr-1" id="mapNav">
+					<div className="row m-auto justify-content-center pt-3" id="searchRowMap">
 						<input
-							className="col-6 form-control rounded border border-white ml-3 mt-1 mb-1"
+							className="col-8 form-control rounded border border-white ml-3 mt-1 mb-1"
 							type="search"
-							placeholder="Where are we going?"
+							placeholder="New Search..."
 							aria-label="Search"
 							id="searchWrapperMap"
 						/>
@@ -47,15 +42,25 @@ export class UserMap extends React.Component {
 							mapElement={<div style={{ height: "100%" }} />}
 						/>
 					</div>
-					<div className="col-12 col-sm-3 ml-auto shadow-lg" id="mapInfoWindow">
+					<div className="col-12 col-sm-3 ml-auto shadow-lg rounded-top" id="mapInfoWindow">
 						<div className="row">
 							<div className="col-4" />
 						</div>
-						<Link to="/">
-							<button type="button" className="btn btn-outline-light">
-								Home
-							</button>
-						</Link>
+
+						<div className="row fixed-bottom">
+							<div className="col-12 text-right navbar-text">
+								<Link to="/">
+									<button type="button" className="btn btn-sm btn-outline-light mr-1">
+										Settings
+									</button>
+								</Link>
+								<Link to="/">
+									<button type="button" className="btn btn-sm btn-outline-danger ml-1 mr-2">
+										Sign Out
+									</button>
+								</Link>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

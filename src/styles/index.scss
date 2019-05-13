@@ -199,6 +199,12 @@ fade-exit.fade-exit-active{
     position: absolute;
 }
 
+#searchWrapperMap{
+        width: 50vw;
+        opacity: 0.8;
+
+    }
+
 @media screen and (max-width: 576px){
     #mapInfoWindow{
         height: 35vh;
@@ -209,8 +215,10 @@ fade-exit.fade-exit-active{
 }
 
     #mapNav h1{
-        font-size: 100%;
+        font-size: 110%;
     }
+
+    
 
 }
 
