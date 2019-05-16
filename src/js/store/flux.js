@@ -39,17 +39,7 @@ const getState = ({ getStore, setStore }) => {
 				Geocode.fromAddress(String(location)).then(
 					response => {
 						const { lat, lng } = response.results[0].geometry.location;
-						Geocode.fromLatLng(lat, lng).then(
-							response => {
-								const address = response.results[0].formatted_address;
-								console.log(address);
-								store.coordinates = { address };
-								setStore({ store: store });
-							},
-							error => {
-								console.error(error);
-							}
-						);
+
 						store.coordinates = { lng, lat };
 						setStore({ store: store });
 					},
