@@ -9,22 +9,21 @@ const getState = ({ getStore, setStore }) => {
 					password: ""
 				}
 			],
-			favorites: []
+			favorites: [],
+			coordinates: []
 		},
 		actions: {
-			changeColor: (index, color) => {
+			getCoordinates: (address, callback) => {
 				//get the store
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
+				let coordinates;
+				geocoder.geocode({ address: address }, function(results, status) {
+					coordinates = results[0].geometry.location;
+					callback(coordinates);
 				});
 
 				//reset the global store
-				setStore({ demo: demo });
+				setStore({ coordinates: coordinates });
 			},
 
 			handleSignUp: (firstName, lastName, email, city, pass1, pass2, e) => {
