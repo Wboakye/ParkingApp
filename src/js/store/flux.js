@@ -1,3 +1,7 @@
+import Geocode from "react-geocode";
+
+Geocode.setApiKey("AIzaSyBF7X8agpeC7_q-NEqrXReWCgiZIkHPTrA");
+
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
@@ -10,10 +14,14 @@ const getState = ({ getStore, setStore }) => {
 				}
 			],
 			favorites: [],
-			coordinates: []
+			coordinates: {
+				lng: "-80.191742",
+				lat: "25.77643",
+				address: "Miami"
+			}
 		},
 		actions: {
-			getCoordinates: (address, callback) => {
+			/*	getCoordinates: (address, callback) => {
 				//get the store
 				const store = getStore();
 				let coordinates;
@@ -24,6 +32,31 @@ const getState = ({ getStore, setStore }) => {
 
 				//reset the global store
 				setStore({ coordinates: coordinates });
+			}, */
+
+			handleCoordinates: location => {
+				const store = getStore();
+				Geocode.fromAddress(String(location)).then(
+					response => {
+						const { lat, lng } = response.results[0].geometry.location;
+						Geocode.fromLatLng(lat, lng).then(
+							response => {
+								const address = response.results[0].formatted_address;
+								console.log(address);
+								store.coordinates = { address };
+								setStore({ store: store });
+							},
+							error => {
+								console.error(error);
+							}
+						);
+						store.coordinates = { lng, lat };
+						setStore({ store: store });
+					},
+					error => {
+						console.error(error);
+					}
+				);
 			},
 
 			handleSignUp: (firstName, lastName, email, city, pass1, pass2, e) => {
