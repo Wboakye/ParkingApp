@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 import { Context } from "../store/appContext";
+import styles from "./GoogleMapStyles.json";
 
 {
 	/* Map Rendering Function */
@@ -12,7 +13,20 @@ function Map() {
 			{({ store, actions }) => {
 				let lat = parseFloat(store.coordinates.lat);
 				let lng = parseFloat(store.coordinates.lng);
-				return <GoogleMap defaultZoom={15} center={{ lat: lat, lng: lng }} />;
+				return (
+					<GoogleMap
+						defaultZoom={15}
+						center={{ lat: lat, lng: lng }}
+						defaultOptions={{
+							disableDefaultUI: true, // disable default map UI
+							draggable: true, // make map draggable
+							keyboardShortcuts: false, // disable keyboard shortcuts
+							scaleControl: true, // allow scale controle
+							scrollwheel: true, // allow scroll wheel
+							styles: styles // change default map styles
+						}}
+					/>
+				);
 			}}
 		</Context.Consumer>
 	);
@@ -31,7 +45,7 @@ export class UserMap extends React.Component {
 							<nav className="navbar navbar-light bg-transparent fixed-top pt-4 mr-1" id="mapNav">
 								<div className="row m-auto justify-content-center pt-3" id="searchRowMap">
 									<input
-										className="col-8 form-control rounded border border-white ml-3 mt-1 mb-1"
+										className="col-8 form-control rounded border border-primary ml-3 mt-1 mb-1"
 										type="search"
 										placeholder="New Search..."
 										aria-label="Search"
@@ -47,7 +61,7 @@ export class UserMap extends React.Component {
 														document.querySelector("#searchWrapperMap").value
 													);
 												}}
-												className="btn btn-outline-light mt-1 mb-1">
+												className="btn btn-primary mt-1 mb-1">
 												Lets Go!
 											</button>
 										</Link>
@@ -55,7 +69,6 @@ export class UserMap extends React.Component {
 								</div>
 							</nav>
 
-							{/* Map API key removed until demo */}
 							<div className="row m-0 h-100" id="mapWrapper">
 								<div className="col-sm-12 p-0" id="map" style={{ height: "100vh", width: "100vw" }}>
 									<WrappedMap

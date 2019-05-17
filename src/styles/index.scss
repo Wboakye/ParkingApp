@@ -189,7 +189,7 @@ fade-exit.fade-exit-active{
 
 #mapInfoWindow{
     z-index: 10;
-    background-color: #212121;
+    background-color: #333333;
     position: absolute;
     right: 0px;
     height: 100vh;
@@ -201,8 +201,9 @@ fade-exit.fade-exit-active{
 }
 
 #searchWrapperMap{
-        width: 50vw;
-        opacity: 0.8;
+    width: 50vw;
+    opacity: 0.8;
+
 
     }
 

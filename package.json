@@ -76,6 +76,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-geocode": "^0.1.2",
+    "react-google-map-components": "0.0.27",
     "react-google-maps": "^9.4.5",
     "react-polyfills": "0.0.1",
     "react-router": "^4.3.1",
