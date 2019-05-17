@@ -105,6 +105,7 @@ export class UserMap extends React.Component {
 										</div>
 									</div>
 								</div>
+								{/* Moving info bar */}
 							</div>
 						</div>
 					);
