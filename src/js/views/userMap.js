@@ -7,7 +7,15 @@ import { Context } from "../store/appContext";
 	/* Map Rendering Function */
 }
 function Map() {
-	return <GoogleMap defaultZoom={15} defaultCenter={{ lat: 25.77643, lng: -80.191742 }} />;
+	return (
+		<Context.Consumer>
+			{({ store, actions }) => {
+				let lat = parseFloat(store.coordinates.lat);
+				let lng = parseFloat(store.coordinates.lng);
+				return <GoogleMap defaultZoom={15} center={{ lat: lat, lng: lng }} />;
+			}}
+		</Context.Consumer>
+	);
 }
 
 const WrappedMap = withScriptjs(withGoogleMap(Map));
