@@ -25,8 +25,11 @@ function Map() {
 							scaleControl: true, // allow scale controle
 							scrollwheel: true, // allow scroll wheel
 							styles: styles // change default map styles
-						}}
-					/>
+						}}>
+						<Marker position={{ lat: 25.77641, lng: -80.19436 }} />
+						<Marker position={{ lat: 25.77275, lng: -80.19332 }} />
+						<Marker position={{ lat: 25.78099, lng: -80.19051 }} />
+					</GoogleMap>
 				);
 			}}
 		</Context.Consumer>

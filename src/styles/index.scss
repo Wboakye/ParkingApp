@@ -207,6 +207,15 @@ fade-exit.fade-exit-active{
 
     }
 
+#locationCard{
+    color: black;
+    font-size: 50%;
+}
+
+#locationCardRow{
+    overflow: scroll;
+}
+
 @media screen and (max-width: 576px){
     #mapInfoWindow{
         height: 35vh;
@@ -214,10 +223,14 @@ fade-exit.fade-exit-active{
     }
     #mapNav{
     width: 100vw;
-}
+    }
 
     #mapNav h1{
         font-size: 110%;
+    }
+    #locationCardRow{
+        overflow: auto;
+        white-space: nowrap;
     }
 
 
