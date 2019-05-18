@@ -42,33 +42,35 @@ export class UserMap extends React.Component {
 				{({ store, actions }) => {
 					return (
 						<div>
-							{/*Search Bar*/}
-							<nav className="navbar navbar-light bg-transparent fixed-top pt-4 mr-1" id="mapNav">
-								<div className="row m-auto justify-content-center pt-3" id="searchRowMap">
-									<input
-										className="col-8 form-control rounded border border-primary ml-3 mt-1 mb-1"
-										type="search"
-										placeholder="New Search..."
-										aria-label="Search"
-										id="searchWrapperMap"
-									/>
+							<form onSubmit={actions.handleCoordinates}>
+								{/*Search Bar*/}
+								<nav className="navbar navbar-light bg-transparent fixed-top pt-4 mr-1" id="mapNav">
+									<div className="row m-auto justify-content-center pt-3" id="searchRowMap">
+										<input
+											className="col-8 form-control rounded border border-primary ml-3 mt-1 mb-1"
+											type="search"
+											placeholder="New Search..."
+											aria-label="Search"
+											id="searchWrapperMap"
+										/>
 
-									<div className="col-1 ml-1 mr-1 p-0">
-										<Link to="/map">
-											<button
-												type="button p-0"
-												onClick={() => {
-													actions.handleCoordinates(
-														document.querySelector("#searchWrapperMap").value
-													);
-												}}
-												className="btn btn-primary mt-1 mb-1">
-												Lets Go!
-											</button>
-										</Link>
+										<div className="col-1 ml-1 mr-1 p-0">
+											<Link to="/map">
+												<button
+													type="button p-0"
+													onClick={() => {
+														actions.handleCoordinates(
+															document.querySelector("#searchWrapperMap").value
+														);
+													}}
+													className="btn btn-primary mt-1 mb-1">
+													Lets Go!
+												</button>
+											</Link>
+										</div>
 									</div>
-								</div>
-							</nav>
+								</nav>
+							</form>
 
 							<div className="row m-0 h-100" id="mapWrapper">
 								<div className="col-sm-12 p-0" id="map" style={{ height: "100vh", width: "100vw" }}>
