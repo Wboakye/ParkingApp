@@ -22,6 +22,8 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
+			let currentComponent = this;
+
 			fetch("https://api.parkwhiz.com/parking/reservation/?key=62d882d8cfe5680004fa849286b6ce20")
 				.then(function(response) {
 					return response.json();
@@ -32,9 +34,11 @@ const injectContext = PassedComponent => {
 						return item.city == "Miami";
 					});
 					console.log(filteredJSON);
-					let { store } = this.state;
+					let { store } = currentComponent.state;
 					store.mapLocations = [filteredJSON];
-					this.setState({ store });
+					currentComponent.setState({
+						store
+					});
 				})
 				.catch(function(err) {
 					console.log("Fetch Error :-S", err);
