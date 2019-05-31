@@ -35,10 +35,9 @@ const injectContext = PassedComponent => {
 					let { store } = this.state;
 					store.mapLocations = [filteredJSON];
 					this.setState({ store });
-
-					const store = getStore();
-					store.mapLocations = [filteredJSON];
-					setStore({ store: store });
+				})
+				.catch(function(err) {
+					console.log("Fetch Error :-S", err);
 				});
 		}
 
