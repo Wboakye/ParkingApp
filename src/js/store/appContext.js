@@ -22,11 +22,24 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			/**
-			 * EDIT THIS!
-			 * This function is the equivalent to "window.onLoad", it only run once on the entire application lifetime
-			 * you should do your ajax requests or fetch api requests here
-			 **/
+			fetch("https://api.parkwhiz.com/parking/reservation/?key=62d882d8cfe5680004fa849286b6ce20")
+				.then(function(response) {
+					return response.json();
+				})
+				.then(function(myJson) {
+					//console.log(myJson);
+					let filteredJSON = myJson.filter(function(item) {
+						return item.city == "Miami";
+					});
+					console.log(filteredJSON);
+					let { store } = this.state;
+					store.mapLocations = [filteredJSON];
+					this.setState({ store });
+
+					const store = getStore();
+					store.mapLocations = [filteredJSON];
+					setStore({ store: store });
+				});
 		}
 
 		render() {

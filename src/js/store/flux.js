@@ -18,7 +18,8 @@ const getState = ({ getStore, setStore }) => {
 				lng: "-80.191742",
 				lat: "25.77643",
 				address: "Miami"
-			}
+			},
+			mapLocations: []
 		},
 		actions: {
 			handleCoordinates: location => {
