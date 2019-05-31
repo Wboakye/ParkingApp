@@ -35,7 +35,7 @@ const injectContext = PassedComponent => {
 					});
 					console.log(filteredJSON);
 					let { store } = currentComponent.state;
-					store.mapLocations = [filteredJSON];
+					store.mapLocations = filteredJSON;
 					currentComponent.setState({
 						store
 					});
