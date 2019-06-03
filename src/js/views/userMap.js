@@ -12,6 +12,14 @@ function Map() {
 	return (
 		<Context.Consumer>
 			{({ store, actions }) => {
+				let markerLocations = store.mapLocations.map(item => {
+					return (
+						<Marker
+							key={item.location_id}
+							position={{ lat: parseFloat(item.lat), lng: parseFloat(item.lng) }}
+						/>
+					);
+				});
 				let lat = parseFloat(store.coordinates.lat);
 				let lng = parseFloat(store.coordinates.lng);
 				//let markerLocations = store.mapLocations.map(location => (
@@ -33,7 +41,7 @@ function Map() {
 						{/*<Marker position={{ lat: 25.77641, lng: -80.19436 }} />
 						<Marker position={{ lat: 25.77275, lng: -80.19332 }} />
 						<Marker position={{ lat: 25.78099, lng: -80.19051 }} />*/}
-						{/*markerLocations*/}
+						{markerLocations}
 					</GoogleMap>
 				);
 			}}
