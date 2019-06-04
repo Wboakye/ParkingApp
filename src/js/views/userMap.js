@@ -22,9 +22,6 @@ function Map() {
 				});
 				let lat = parseFloat(store.coordinates.lat);
 				let lng = parseFloat(store.coordinates.lng);
-				//let markerLocations = store.mapLocations.map(location => (
-				//<Marker key={location.location_id} position={{ lat: location.lat, lng: location.lng }} />
-				//));
 				console.log(store.mapLocations);
 				return (
 					<GoogleMap
@@ -38,9 +35,6 @@ function Map() {
 							scrollwheel: true, // allow scroll wheel
 							styles: styles // change default map styles
 						}}>
-						{/*<Marker position={{ lat: 25.77641, lng: -80.19436 }} />
-						<Marker position={{ lat: 25.77275, lng: -80.19332 }} />
-						<Marker position={{ lat: 25.78099, lng: -80.19051 }} />*/}
 						{markerLocations}
 					</GoogleMap>
 				);
